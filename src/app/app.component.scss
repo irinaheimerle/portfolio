@@ -1,0 +1,43 @@
+$title_font_size: 50px;
+$subtitle_font_size: 15px;
+
+.hero {
+    background: url("../assets/hero_image.jpg");
+    color: white;
+    height: 50%;
+    background-position: center;
+    background-size: cover;
+
+    width: 100wh;
+    height: 100vh;
+
+    &__intro {
+        &--title {font-size: $title_font_size;}
+    
+        &--subtitle {font-size: $subtitle_font_size}
+    }
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    &__items {
+        display: flex; 
+        list-style: none;
+    }
+    
+    &__item {
+        padding-right: 45px;
+        text-decoration: none;
+    }
+}
+
+// ROW CSS
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
