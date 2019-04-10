@@ -1,26 +1,76 @@
-$title_font_size: 50px;
+@import url('https://fonts.googleapis.com/css?family=Merienda+One|Quicksand');
+
+$title_font_size: 40px;
 $subtitle_font_size: 15px;
 
-.hero {
-    background: url("../assets/hero_image.jpg");
-    color: white;
-    height: 50%;
-    background-position: center;
-    background-size: cover;
+$blue: #6FB0B4;
+$orange: #FC9D5D;
+$dark_orange: #F99057;
+$light_blue: #CFDEDB;
+$beige: #E7E1D3;
 
-    width: 100wh;
-    height: 100vh;
+$content-font: 'Quicksand', sans-serif;
+$title-font: 'Merienda One', cursive;
 
-    &__intro {
-        &--title {font-size: $title_font_size;}
+.cards, .hero, .extra {margin-top: 25px;}
+
+.cards, .extra {
+    color: $dark_orange;
+    background-color: $light_blue;
+    //height: 5%;
+    padding: 10px;
     
-        &--subtitle {font-size: $subtitle_font_size}
+    &__grid {
+        &--single {
+            text-align: center;
+            padding: 25px;
+            // background-color: $light_blue;
+        }
+
+        &--title {
+            font-size: $title_font_size;
+            // background-color: $beige;
+            width: 47%;
+            text-align: center;
+        }
     }
+    
+    
 }
 
-.navigation {
+.hero {
+    text-align: center;
+    color: $dark_orange;
+    // height: 50%;
+    background-color: $light_blue;
+    width: 20%;
+    padding: 0px 20px 20px 20px;
+    max-height: 525px;
+    
+    &__intro {
+        &--image {
+            max-width:100%;
+            height:auto;
+        }
+
+        &--title {
+            font-size: $title_font_size;
+            font-family: $title-font;
+            margin-bottom: 0px;
+        }
+    
+        &--subtitle {
+            font-size: $subtitle_font_size;
+            color: $blue;
+        }
+    }
+
+    
+}
+
+.navigation, .social {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     
     &__items {
@@ -31,13 +81,28 @@ $subtitle_font_size: 15px;
     &__item {
         padding-right: 45px;
         text-decoration: none;
+        color: $dark_orange;
+
+        &:hover {
+            color: $orange;
+        }
     }
+}
+
+.page {
+    background: url("../assets/background.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100wh;
+
+    font-family: $content-font;
 }
 
 // ROW CSS
 .row {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    // align-items: center;
 }
