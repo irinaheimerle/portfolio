@@ -19,23 +19,41 @@ $title-font: 'Merienda One', cursive;
     background-color: $light_blue;
     //height: 5%;
     padding: 10px;
+    height: 525px;
     
     &__grid {
         &--single {
             text-align: center;
             padding: 25px;
-            // background-color: $light_blue;
+            // background-color: $light_blue;]
+        }
+
+        &--image {
+            border: 1px solid #6FB0B4;
+
+            &:hover {
+                cursor: pointer;
+                opacity: .7;
+            }
+            
+        }
+        
+        &--select {
+            background: transparent;
+            line-height: 1;
+            border: 0;
+            padding: 0;
+            border-radius: 0;
+            min-width: 50%;
+            font-size: $title_font_size;
+            color: $dark_orange;
         }
 
         &--title {
             font-size: $title_font_size;
-            // background-color: $beige;
-            width: 47%;
-            text-align: center;
+            color: $dark_orange;
         }
     }
-    
-    
 }
 
 .hero {

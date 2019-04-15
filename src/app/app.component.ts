@@ -6,12 +6,47 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Rin Heimerle';
-
-  testString: string;
+    portfolioTypes:string[];
+    selectedType:string;
+    showSingle:boolean;
+    projects:Object;
 
   constructor() {
-    this.testString = "test!";
+    this.portfolioTypes = new Array("Featured Projects", "About Me", "Extra", "Contact");
+    this.selectedType = this.portfolioTypes[0];
+    this.showSingle = false;
+
+    this.projects = new Array({
+      'slug' : 'intertalk',
+      'title' : 'InterTalk',
+      'techs' : 'Laravel, Twill, Docker',
+      'image' : '../assets/intertalk_image.png'
+      },
+      {
+        'slug' : 'space_pizza',
+        'title' : 'Space Pizza',
+        'techs' : 'CreateJS',
+        'image' : '../assets/space_pizza.png'
+      }, 
+      {
+        'slug' : 'tidal_bore',
+        'title': 'Tidal Bore App',
+        'techs': 'Cordova',
+        'image' : '../assets/tidal_bore.png'
+      }
+    );
   }
 
+  showSingleProject = function(given:string) {
+    this.projects.forEach(project => {
+      
+    });
+    
+    this.showSingle = true;
+  }
 }
+
+
+
+
+
