@@ -25,56 +25,50 @@
             </div>
         </div>
 
+        <div class="single__card">
+            
+        </div>
+
         <div class="content">
             <div class="row">
                 <div class="cards">
                     <div class="cards__grid">
                         <div class="cards__grid--title">
-                            <span>Featured Projects</span>
+                            <select class="cards__grid--select" [(ngModel)]="selectedType" *ngIf="showSingle === false">
+                                <option *ngFor="let type of portfolioTypes" class="cards__grid--option" [value]="type"> {{type}} </option>
+                            </select>
                         </div>
-                        <div class="row">
-                            <div class="cards__grid--single">
-                                <img src="../assets/card_image.jpg">
-                                <p class="cards__grid--test">SINGLE CARD TITLE</p>
-                                <p class="cards__grid--subtitle">SINGLE CARD SUB</p>
-                            </div>
-                            <div class="cards__grid--single">
-                                <img src="../assets/card_image.jpg">
-                                <p class="cards__grid--test">SINGLE CARD TITLE</p>
-                            </div>
-                            <div class="cards__grid--single">
-                                <img src="../assets/card_image.jpg">
-                                <p class="cards__grid--test">SINGLE CARD TITLE</p>
+                        
+                        <!-- SECTION: PROJECT CARDS -->
+                        <div class="row" *ngIf="selectedType === 'Featured Projects' && showSingle === false">
+                            <div *ngFor="let project of projects">
+                                <div class="cards__grid--single" (click)="showSingleProject(project.slug)">
+                                    <img src="{{project.image}}" class="cards__grid--image" *ngIf="project.image !== ''">
+                                    <p class="cards__grid--subtitle">{{project.title}}</p>
+                                    <p class="cards__grid--techs">{{project.techs}}</p>
+                                </div>
                             </div>
                         </div>
-                        <!-- <div class="row">
-                            <div class="cards__grid--load">
-                                <a href="#">Load More</a>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-            
-            <!-- <div class="row">
-                <div class="extra">
-                    <div class="extra__stuff">
-                        <div class="cards__grid--title">
-                            <span>Extra Stuff</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="extra">
-                    <div class="extra__stuff">
-                        <div class="cards__grid--title">
-                            <span>Contact</span>
+                        <!-- SECTION: SINGLE PROJECT -->
+                        <div class="row" *ngIf="showSingle === true">
+                            <div class="cards__grid--title">
+                                
+                            </div>
+                            <button (click)="showSingle = false">X</button>
+                        </div>
+
+                        <!-- SECTION: ABOUT ME -->
+                        <div class="row" *ngIf="selectedType === 'About Me'">
+                            <div class="cards__grid--single">
+                                <p>I'm a developer! Living in Nova Scotia, from New York</p>
+                                <p>I love Star Wars, and coffee.</p>
+                                <p>When I'm not working, I'm playing guitar, or watching TV</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </div>
