@@ -11,9 +11,11 @@ export class AppComponent {
     selectedType:string;
     showSingle:boolean;
     featuredProjects:Object;
-    otherProjects:Object;
+    firstRoundProjects:Object;
+    secondRoundProjects:Object;
     currentProject:Object;
     moreProjects:boolean;
+    showHide:string;
     
 
   constructor() {
@@ -21,6 +23,7 @@ export class AppComponent {
     this.selectedType = this.portfolioTypes[0];
     this.showSingle = false;
     this.moreProjects = false;
+    this.showHide = "More Projects";
     
     this.featuredProjects = new Array({
         'slug' : 'space_pizza',
@@ -34,6 +37,7 @@ export class AppComponent {
         'title': 'Tidal Bore App',
         'techs': 'Cordova',
         'image' : '../assets/tidal_bore.png',
+        'imageLarge' : '../assets/tidalbore_features.png'
       },
       {
       'slug' : 'fourth_avenue',
@@ -44,7 +48,7 @@ export class AppComponent {
       },
     );
 
-    this.otherProjects = new Array({
+    this.firstRoundProjects = new Array({
         'slug' : 'address_book',
         'title' : 'Address Book',
         'techs' : 'PHP, Webpack, MySql',
@@ -52,17 +56,10 @@ export class AppComponent {
         'imageLarge' : '../assets/address_book_backend.png'
       }, 
       {
-        'slug' : 'Bank Machine',
-        'title': 'bank_machine',
-        'techs': 'Java',
-        'image' : '../assets/tidal_bore.png',
-      },
-      {
-      'slug' : 'address_book',
-      'title' : 'address_book',
-      'techs' : 'Wordpress, PHP, Smarty',
-      'image' : '../assets/fourth_ave.png',
-      'imageLarge' : '../assets/fourth_ave_backend.png'
+      'slug' : 'launchpad',
+      'title' : 'launchpad',
+      'techs' : 'ASP.NET CORE, Azure',
+      'image' : '../assets/launchpad.png',
       },
     );
   }
@@ -74,8 +71,14 @@ export class AppComponent {
           this.currentProject = project;
         }
       });
-    } else {
-      this.otherProjects.forEach(project => {
+    } else if (which === 'first') {
+      this.firstRoundProjects.forEach(project => {
+        if(project.slug === given) {
+          this.currentProject = project;
+        }
+      });
+    } else if (which === 'second') {
+      this.secondRoundProjects.forEach(project => {
         if(project.slug === given) {
           this.currentProject = project;
         }
@@ -85,8 +88,14 @@ export class AppComponent {
     this.moreProjects = false;
   }
 
-  test = function() {
-    console.log(this.thirdThree);
+  toggleMoreProjects = function() {
+    if(this.moreProjects === false ) {
+      this.showHide = "Collapse Projects";
+      this.moreProjects = true;
+    } else {
+      this.showHide = "More Projects";
+      this.moreProjects = false;
+    }
   }
 }
 

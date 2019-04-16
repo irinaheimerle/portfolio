@@ -12,9 +12,9 @@ $beige: #E7E1D3;
 $content-font: 'Quicksand', sans-serif;
 $title-font: 'Merienda One', cursive;
 
-body {background-color: $light_blue;}
-
 .cards, .hero, .extra {margin-top: 25px;}
+
+.more {padding-top: 25px;}
 
 .cards, .extra {
     color: $dark_orange;
@@ -105,9 +105,6 @@ body {background-color: $light_blue;}
 }
 
 .page {
-    background: url("../assets/background.jpg");
-    background-position: center;
-    background-size: cover;
     height: 100vh;
     width: 100wh;
 

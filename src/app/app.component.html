@@ -48,7 +48,7 @@
 
                         <div class="row">
                             <div class="cards__grid--links">
-                                <a href="#moreProjects" *ngIf="selectedType === 'Featured Projects' && showSingle === false" (click)="moreProjects = true;">More Projects</a>
+                                <a href="#more" *ngIf="selectedType === 'Featured Projects' && showSingle === false" (click)="toggleMoreProjects();">{{showHide}}</a>
                             </div>
                         </div>
 
@@ -63,20 +63,27 @@
                                     <img class="single__image--src" src="{{currentProject.image}}">
                                     <img class="single__image--src" src="{{currentProject.imageLarge}}" *ngIf="currentProject.imageLarge !== ''">
                                 </div>
-                                <div>
-                                    <div class="single__description" *ngIf="currentProject.slug === 'space_pizza'">
-                                        <p>Your Objective? Collect the slices of pizza before an asteroid hits you!</p>
-                                        <p>Techs include: CreateJS, EaselJS, Adobe Animate</p>
-                                        <p>Hardest Obstacle: collision detection</p>
-                                    </div>
-                                    <div class="single__description" *ngIf="currentProject.slug === 'tidal_bore'">
-                                        <p>A Mobile Application for Colchestor Chamber of Commerce</p>
-                                        <p>Features: Tidal Bore height, countdown, search by date, Google Maps Integration</p>
-                                    </div>
-                                    <div class="single__description" *ngIf="currentProject.slug === 'fourth_avenue'">
-                                        <p>My first Wordpress build!</p>
-                                        <p>Features: Advanced Custom Fields, Smarty PHP Templating, Gravity Forms   </p>
-                                    </div>
+                                <div class="single__description" *ngIf="currentProject.slug === 'space_pizza'">
+                                    <p>Your Objective? Collect the slices of pizza before an asteroid hits you!</p>
+                                    <p>Techs include: CreateJS, EaselJS, Adobe Animate</p>
+                                    <p>Hardest Obstacle: collision detection</p>
+                                </div>
+                                <div class="single__description" *ngIf="currentProject.slug === 'tidal_bore'">
+                                    <p>A Mobile Application for Colchestor Chamber of Commerce</p>
+                                    <p>Features: Tidal Bore height, countdown, search by date, Google Maps Integration</p>
+                                </div>
+                                <div class="single__description" *ngIf="currentProject.slug === 'fourth_avenue'">
+                                    <p>My first Wordpress build!</p>
+                                    <p>Features: Advanced Custom Fields, Smarty PHP Templating, Gravity Forms</p>
+                                    <a href="http://fourthavenue.codeandmortar.com/" target="_blank">View the site here!</a>
+                                </div>
+                                <div class="single__description" *ngIf="currentProject.slug === 'address_book'">
+                                    <p>A PHP Application!</p>
+                                    <p>Features: CRUD with MySQLI, Webpack JS, SCSS, CSV file reading / writing</p>
+                                </div>
+                                <div class="single__description" *ngIf="currentProject.slug === 'launchpad'">
+                                    <p>A ASP.NET CORE Application</p>
+                                    <p>Features: CRUD with MySQL, MVC Pattern, Bootstrap</p>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +92,8 @@
                         <div *ngIf="selectedType === 'About Me'" style="padding-top: 50px;">
                             <div class="single">
                                 <div class="single__image">
-                                    <img src="../assets/card_image.jpg" class="single__image--src">
-                                    <img src="../assets/card_image.jpg" class="single__image--src">
+                                    <img src="../assets/peggys_cove.jpg" class="single__image--src">
+                                    <img src="../assets/new_york.jpg" class="single__image--src">
                                 </div>
                                 <div class="single__description">
                                     <p>I'm a developer! Living in Nova Scotia, from New York</p>
@@ -96,15 +103,44 @@
                             </div>
                         </div>
 
-                        <!-- SECTION: MORE PROJECTS -->
-                        <div *ngIf="moreProjects === true">
-                            <!-- SECTION: PROJECT CARDS -->
-                            <div class="row" *ngIf="selectedType === 'Featured Projects' && showSingle === false">
-                                <div *ngFor="let project of otherProjects; let i = index; ">
-                                    <div class="cards__grid--single">
-                                        <a href="#" (click)="showSingleProject(project.slug)"><img src="{{project.image}}" class="cards__grid--image" *ngIf="project.image !== ''"></a>
-                                        <p class="cards__grid--subtitle">{{project.title}}</p>
-                                        <p class="cards__grid--techs">{{project.techs}}</p>
+                        <!-- SECTION: ABOUT ME -->
+                        <div *ngIf="selectedType === 'Contact'" style="padding-top: 50px;">
+                            <div class="single">
+                                <div class="single__image">
+                                    <img src="../assets/card_image.jpg" class="single__image--src">
+                                    <img src="../assets/card_image.jpg" class="single__image--src">
+                                </div>
+                                <div class="single__description">
+                                    <p>The best way to contact me is through <a href="mailto:irinaheimerle@gmail.com">email!</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="more" id="more">
+                            <!-- SECTION: MORE PROJECTS | PART I -->
+                            <div *ngIf="moreProjects === true">
+                                <!-- SECTION: PROJECT CARDS -->
+                                <div class="row" *ngIf="selectedType === 'Featured Projects' && showSingle === false">
+                                    <div *ngFor="let project of firstRoundProjects; let i = index; ">
+                                        <div class="cards__grid--single">
+                                            <a href="#" (click)="showSingleProject(project.slug, 'first')"><img src="{{project.image}}" class="cards__grid--image" *ngIf="project.image !== ''"></a>
+                                            <p class="cards__grid--subtitle">{{project.title}}</p>
+                                            <p class="cards__grid--techs">{{project.techs}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SECTION: MORE PROJECTS | PART II -->
+                            <div *ngIf="moreProjects === true">
+                                <!-- SECTION: PROJECT CARDS -->
+                                <div class="row" *ngIf="selectedType === 'Featured Projects' && showSingle === false">
+                                    <div *ngFor="let project of secondRoundProjects; let i = index; ">
+                                        <div class="cards__grid--single">
+                                            <a href="#" (click)="showSingleProject(project.slug, 'second')"><img src="{{project.image}}" class="cards__grid--image" *ngIf="project.image !== ''"></a>
+                                            <p class="cards__grid--subtitle">{{project.title}}</p>
+                                            <p class="cards__grid--techs">{{project.techs}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
