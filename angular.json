@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/fontello-44d393d1/css/fontello.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true

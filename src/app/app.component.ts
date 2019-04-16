@@ -29,22 +29,22 @@ export class AppComponent {
         'slug' : 'space_pizza',
         'title' : 'Space Pizza: The Game',
         'techs' : 'CreateJS',
-        'image' : '../assets/space_pizza.png',
-        'imageLarge' : '../assets/space_pizza_game_play.png'
+        'image' : 'assets/space_pizza.png',
+        'imageLarge' : 'assets/space_pizza_game_play.png'
       }, 
       {
         'slug' : 'tidal_bore',
         'title': 'Tidal Bore App',
         'techs': 'Cordova',
-        'image' : '../assets/tidal_bore.png',
-        'imageLarge' : '../assets/tidalbore_features.png'
+        'image' : 'assets/tidal_bore.png',
+        'imageLarge' : 'assets/tidalbore_features.png'
       },
       {
       'slug' : 'fourth_avenue',
       'title' : 'Fourth Avenue',
       'techs' : 'Wordpress, PHP, Smarty',
-      'image' : '../assets/fourth_ave.png',
-      'imageLarge' : '../assets/fourth_ave_backend.png'
+      'image' : 'assets/fourth_ave.png',
+      'imageLarge' : 'assets/fourth_ave_backend.png'
       },
     );
 
@@ -52,14 +52,14 @@ export class AppComponent {
         'slug' : 'address_book',
         'title' : 'Address Book',
         'techs' : 'PHP, Webpack, MySql',
-        'image' : '../assets/address_book.png',
-        'imageLarge' : '../assets/address_book_backend.png'
+        'image' : 'assets/address_book.png',
+        'imageLarge' : 'assets/address_book_backend.png'
       }, 
       {
       'slug' : 'launchpad',
       'title' : 'launchpad',
       'techs' : 'ASP.NET CORE, Azure',
-      'image' : '../assets/launchpad.png',
+      'image' : 'assets/launchpad.png',
       },
     );
   }
