@@ -17,15 +17,12 @@ $title-font: 'Merienda One', cursive;
 .cards, .extra {
     color: $dark_orange;
     background-color: $light_blue;
-    //height: 5%;
     padding: 10px;
-    height: 525px;
     
     &__grid {
         &--single {
             text-align: center;
             padding: 25px;
-            // background-color: $light_blue;]
         }
 
         &--image {
@@ -48,21 +45,15 @@ $title-font: 'Merienda One', cursive;
             font-size: $title_font_size;
             color: $dark_orange;
         }
-
-        &--title {
-            font-size: $title_font_size;
-            color: $dark_orange;
-        }
     }
 }
 
 .hero {
     text-align: center;
     color: $dark_orange;
-    // height: 50%;
     background-color: $light_blue;
     width: 20%;
-    padding: 0px 20px 20px 20px;
+    padding: 0px 40px 40px 40px;
     max-height: 525px;
     
     &__intro {
@@ -117,10 +108,37 @@ $title-font: 'Merienda One', cursive;
     font-family: $content-font;
 }
 
-// ROW CSS
 .row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    // align-items: center;
+}
+
+.single {
+    text-align: center;
+    height: 100%;
+    
+    &__button {
+        float: right;
+        background-color: $light_blue;
+        color: $blue;
+        border: 2px solid $dark_orange;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $beige;
+        }
+    }
+    
+    &__description {
+        padding-top: 40px;
+        font-size: $subtitle_font_size;
+        color: $blue;
+    }
+
+    &__title {
+        padding-top: 10px;
+        font-size: $title_font_size;
+        color: $dark_orange;
+    }
 }

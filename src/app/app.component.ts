@@ -10,6 +10,7 @@ export class AppComponent {
     selectedType:string;
     showSingle:boolean;
     projects:Object;
+    currentProject:Object;
 
   constructor() {
     this.portfolioTypes = new Array("Featured Projects", "About Me", "Extra", "Contact");
@@ -20,28 +21,25 @@ export class AppComponent {
       'slug' : 'intertalk',
       'title' : 'InterTalk',
       'techs' : 'Laravel, Twill, Docker',
-      'image' : '../assets/intertalk_image.png'
+      'image' : '../assets/intertalk_image.png',
       },
       {
         'slug' : 'space_pizza',
-        'title' : 'Space Pizza',
+        'title' : 'Space Pizza: The Game',
         'techs' : 'CreateJS',
-        'image' : '../assets/space_pizza.png'
+        'image' : '../assets/space_pizza.png',
       }, 
       {
         'slug' : 'tidal_bore',
         'title': 'Tidal Bore App',
         'techs': 'Cordova',
-        'image' : '../assets/tidal_bore.png'
+        'image' : '../assets/tidal_bore.png',
       }
     );
   }
 
   showSingleProject = function(given:string) {
-    this.projects.forEach(project => {
-      
-    });
-    
+    this.projects.forEach(project => { if(project.slug === given) this.currentProject = project; });
     this.showSingle = true;
   }
 }
